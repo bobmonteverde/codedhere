@@ -1,0 +1,8 @@
+.documentList(ng-controller="DocumentListCtrl")
+  ul
+    li(ng-repeat="doc in documents")
+      span.name
+        a(href="document/{{doc.id}}")
+          {{doc.name}}
+      span.description
+        {{doc.description}}

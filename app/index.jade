@@ -1,0 +1,16 @@
+extend layout
+
+block body
+
+  block header
+    .navbar
+      .navbar-inner
+        .container
+          a.brand(href="#") codedHere.com
+          ul.nav
+            li.documentList
+              a(href="/documentList") Document List
+
+  block content
+    // Add your site or application content here
+    .container(ng-view)
