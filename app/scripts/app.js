@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('codedhereApp', [])
+angular.module('codedhereApp', ['firebase'])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
@@ -10,6 +10,14 @@ angular.module('codedhereApp', [])
       .when('/documentList', {
         templateUrl: '/views/documentList.html',
         controller: 'DocumentListCtrl'
+      })
+      .when('/document/:id', {
+        templateUrl: '/views/editor.html',
+        controller: 'EditorCtrl'
+      })
+      .when('/chat', {
+        templateUrl: '/views/chat.html',
+        controller: 'ChatCtrl'
       })
       .otherwise({
         redirectTo: '/'

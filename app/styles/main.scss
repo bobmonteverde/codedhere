@@ -1,1 +1,44 @@
+@import "compass/css3";
 @import "compass_twitter_bootstrap";
+
+.nameWrap {
+  @extend .clearfix;
+
+  label {
+    float: left;
+    padding-top: 5px;
+    width: 100px;
+  }
+  input {
+    float: left;
+  }
+}
+
+.message {
+  em {
+    display: inline-block;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+  }
+}
+
+.messagesWrap {
+  @extend .span8;
+  height: 280px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  @include border-radius(5px);
+}
+
+.addMessage {
+  @extend .span7;
+  @extend .offset1;
+  margin-top: 10px;
+
+  #message {
+    @extend .span6;
+  }
+  #send {
+  }
+}

@@ -1,0 +1,25 @@
+form.documentForm
+  .inputWrap
+    label(for="name") Name:
+    input#name(name="name", value="{{doc.name}}")
+  .inputWrap
+    label(for="description") Description:
+    textarea#description(name="description")
+      {{doc.description}}
+  .editorWrap
+    label(for="htmlEditor") HTML:
+    textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
+  .editorWrap
+    label(for="cssEditor") CSS:
+    textarea#cssEditor(name="cssEditor", ng-model="doc.cssCode")
+  .editorWrap
+    label(for="jsEditor") JS:
+    textarea#jsEditor(name="jsEditor", ng-model="doc.jsCode")
+
+.editorControls
+  button(ng-click='preview()') Preview
+
+.previewWrap
+  p Preview:
+  //-iframe(src="/preview/{{doc.id}}")
+  iframe#preview

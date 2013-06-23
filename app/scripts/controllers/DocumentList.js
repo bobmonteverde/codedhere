@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('codedhereApp')
-  .controller('DocumentListCtrl', function ($scope) {
+  .controller('DocumentListCtrl', ['$scope', function ($scope) {
     $scope.documents = [
       {
         id: 1,
@@ -51,4 +51,4 @@ angular.module('codedhereApp')
     });
    */
 
-  });
+  }]);
