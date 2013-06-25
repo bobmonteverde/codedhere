@@ -31,21 +31,21 @@ html.no-js
           a(href='http://www.google.com/chromeframe/?redirect=true') install Google Chrome Frame
           | to better experience this site.
       //if lt IE 9
-        script(src='/components/es5-shim/es5-shim.js')
-        script(src='/components/json3/lib/json3.min.js')
+        script(src='/bower_components/es5-shim/es5-shim.js')
+        script(src='/bower_components/json3/lib/json3.min.js')
 
     block body
       // Add your site or application content here
       .container(ng-view)
 
     block scripts
-      script(src='/components/angular/angular.js')
-      script(src='/components/angular-resource/angular-resource.js')
-      script(src='/components/angular-cookies/angular-cookies.js')
-      script(src='/components/angular-sanitize/angular-sanitize.js')
+      script(src='/bower_components/angular/angular.js')
+      script(src='/bower_components/angular-resource/angular-resource.js')
+      script(src='/bower_components/angular-cookies/angular-cookies.js')
+      script(src='/bower_components/angular-sanitize/angular-sanitize.js')
       script(src='https://cdn.firebase.com/v0/firebase.js')
-      script(src='/components/angularFire/angularFire.js')
-      //-script(src='/components/jquery/jquery.js')
+      //-script(src='/bower_components/angular-fire/angularFire.js')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/angularFire/0.1.0/angularfire.min.js')
       // build:js scripts/scripts.js
       script(src='/scripts/app.js')
       script(src='/scripts/controllers/main.js')

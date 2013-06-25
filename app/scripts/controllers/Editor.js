@@ -49,11 +49,10 @@ angular.module('codedhereApp')
     ];
 
     var doc = documents.filter(function(d) {
-      return d.id === id;
+      return +d.id === +id;
     });
 
     $scope.doc = doc.length ? doc[0] : blank;
-
 
     $scope.$on('$viewContentLoaded', preview);
 
@@ -75,7 +74,7 @@ angular.module('codedhereApp')
       frame.open();
       frame.write('<style>' + $scope.doc.cssCode + '</style>');
       frame.write($scope.doc.htmlCode);
-      frame.write('<script src="/components/jquery/jquery.js"></script>');
+      frame.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>');
       frame.write('<script>' + $scope.doc.jsCode + '</script>');
       frame.close();
     }

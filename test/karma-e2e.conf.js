@@ -18,7 +18,7 @@ exclude = [];
 reporters = ['progress'];
 
 // web server port
-port = 8080;
+port = 9876;
 
 // cli runner port
 runnerPort = 9100;
@@ -31,7 +31,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -49,3 +49,9 @@ captureTimeout = 5000;
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit
 singleRun = false;
+
+proxies = {
+  '/': 'http://localhost:9000/'
+};
+
+urlRoot = '_test_';

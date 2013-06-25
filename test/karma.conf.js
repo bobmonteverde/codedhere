@@ -7,8 +7,8 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'app/components/angular/angular.js',
-  'app/components/angular-mocks/angular-mocks.js',
+  'app/bower_components/angular/angular.js',
+  'app/bower_components/angular-mocks/angular-mocks.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
   'test/mock/**/*.js',
@@ -23,10 +23,10 @@ exclude = [];
 reporters = ['progress'];
 
 // web server port
-port = 8080;
+port = 9877;
 
 // cli runner port
-runnerPort = 9100;
+runnerPort = 9101;
 
 // enable / disable colors in the output (reporters and logs)
 colors = true;
@@ -36,7 +36,7 @@ colors = true;
 logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -49,7 +49,7 @@ autoWatch = false;
 browsers = ['Chrome'];
 
 // If browser does not capture in given timeout [ms], kill it
-captureTimeout = 10000;
+captureTimeout = 5000;
 
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit
