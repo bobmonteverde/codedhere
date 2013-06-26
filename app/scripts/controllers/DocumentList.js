@@ -5,7 +5,7 @@ angular.module('codedhereApp')
     $scope.documents = [
       {
         id: 1,
-        name: 'Document1',
+        title: 'Document1',
         description: 'A document description',
         htmlCode: '<strong>test</strong>',
         cssCode: 'strong { color: #f00 }',
@@ -13,7 +13,7 @@ angular.module('codedhereApp')
       },
       {
         id: 2,
-        name: 'Document2',
+        title: 'Document2',
         description: 'Another document description',
         htmlCode: '<b>test</b>',
         cssCode: 'strong { color: #0f0 }',
@@ -21,7 +21,7 @@ angular.module('codedhereApp')
       },
       {
         id: 3,
-        name: 'Document3',
+        title: 'Document3',
         description: 'Yet another document description',
         htmlCode: '<strong>test</strong>',
         cssCode: 'strong { color: #f00 }',
@@ -29,7 +29,7 @@ angular.module('codedhereApp')
       },
       {
         id: 4,
-        name: 'Document4',
+        title: 'Document4',
         description: 'One more document description',
         htmlCode: '<strong>test</strong>',
         cssCode: 'strong { color: #f00 }',
@@ -47,7 +47,7 @@ angular.module('codedhereApp')
       $scope.documents = data;
     }).
     error(function (data, status, headers, config) {
-      $scope.name = 'Error!'
+      $scope.title = 'Error!'
     });
    */
 

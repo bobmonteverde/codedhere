@@ -1,11 +1,10 @@
 form.documentForm
   .inputWrap
-    label(for="name") Name:
-    input#name(name="name", value="{{doc.name}}")
+    label(for="title") Title:
+    input#title(name="title", ng-model="doc.title")
   .inputWrap
     label(for="description") Description:
-    textarea#description(name="description")
-      {{doc.description}}
+    textarea#description(name="description", ng-model="doc.description")
   .editorWrap
     label(for="htmlEditor") HTML:
     textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
@@ -18,6 +17,7 @@ form.documentForm
 
 .editorControls
   button(ng-click='preview()') Preview
+  button(ng-click='save()') Save
 
 .previewWrap
   p Preview:
