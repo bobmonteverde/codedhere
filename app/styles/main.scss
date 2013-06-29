@@ -1,6 +1,30 @@
 @import "compass/css3";
 @import "compass_twitter_bootstrap";
 
+
+.documentList {
+
+  ul {
+    list-style-type: none;
+
+    li {
+      margin: 7px 0;
+
+      .title {
+        display: inline-block;
+        width: 200px;
+      }
+
+      .description {
+        display: inline-block;
+      }
+    }
+  }
+
+}
+
+
+
 #chatWrap {
   .nameWrap {
     @extend .clearfix;

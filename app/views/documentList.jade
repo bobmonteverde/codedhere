@@ -2,7 +2,7 @@
   ul
     li(ng-repeat="doc in documents")
       span.title
-        a(href="document/{{doc.id}}")
+        a(href="document/{{doc.$id}}")
           {{doc.title}}
       span.description
         {{doc.description}}
