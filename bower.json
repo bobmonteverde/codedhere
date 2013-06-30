@@ -4,10 +4,10 @@
   "dependencies": {
     "angular": "~1.0.5",
     "angular-cookies": "~1.0.5",
-    "angular-fire": "0.0.0",
     "angular-resource": "~1.0.5",
     "angular-sanitize": "~1.0.5",
     "angular-ui": "~0.4.0",
+    "angular-ui-ace": "latest",
     "es5-shim": "~2.0.8",
     "jquery": "~2.0.2",
     "json3": "~3.2.4"

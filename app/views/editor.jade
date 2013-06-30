@@ -10,13 +10,16 @@ form.documentForm
   .editors
     .editorWrap
       label(for="htmlEditor") HTML:
-      textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
+      //-textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
+      div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
     .editorWrap
       label(for="cssEditor") CSS:
-      textarea#cssEditor(name="cssEditor", ng-model="doc.cssCode")
+      //-textarea#cssEditor(name="cssEditor", ng-model="doc.cssCode")
+      div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
     .editorWrap
       label(for="jsEditor") JS:
-      textarea#jsEditor(name="jsEditor", ng-model="doc.jsCode")
+      //-textarea#jsEditor(name="jsEditor", ng-model="doc.jsCode")
+      div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
 
 .editorControls
   button(ng-click='preview()') Preview

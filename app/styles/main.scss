@@ -80,6 +80,20 @@ header {
   .editors {
     float: left;
   }
+
+
+  .ace_editor {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .ace_editor_wrapper {
+    position: relative;
+    height: 200px;
+    width: 600px;
+  }
 }
 
 

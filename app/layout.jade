@@ -39,10 +39,12 @@ html.no-js
       .container(ng-view)
 
     block scripts
+      script(src='/bower_components/ace-builds/src-min-noconflict/ace.js')
       script(src='/bower_components/angular/angular.js')
       script(src='/bower_components/angular-resource/angular-resource.js')
       script(src='/bower_components/angular-cookies/angular-cookies.js')
       script(src='/bower_components/angular-sanitize/angular-sanitize.js')
+      script(src='/bower_components/angular-ui-ace/ui-ace.js')
       script(src='https://cdn.firebase.com/v0/firebase.js')
       script(src='https://cdn.firebase.com/v0/firebase-auth-client.js')
       //-script(src='//cdnjs.cloudflare.com/ajax/libs/angularFire/0.1.0/angularfire.min.js')
