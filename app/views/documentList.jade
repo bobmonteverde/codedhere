@@ -1,6 +1,11 @@
 .documentList(ng-controller="DocumentListCtrl")
+  form.docSearch
+    div
+      //-label(for="docSearch") Search: 
+      button(type="submit") Search
+      input#docSearch(type="text", name="docSearch", ng-model="docSearch")
   ul
-    li(ng-repeat="doc in documents")
+    li(ng-repeat="doc in documents | filter:docSearch")
       span.title
         a(href="document/{{doc.$id}}")
           {{doc.title}}

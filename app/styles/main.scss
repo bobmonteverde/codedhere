@@ -18,20 +18,36 @@ header {
 
   #user-nav {
     float: right;
-
-    li {
-    }
   }
 }
 
 
 .documentList {
 
+  .docSearch {
+    @extend .clearfix;
+    @extend .form-search;
+
+    div {
+      @extend .input-prepend;
+      margin-left: 20px;
+
+      button {
+        @extend .btn;
+      }
+      input {
+      }
+    }
+  }
+
   ul {
     list-style-type: none;
+    margin-left: 0;
 
     li {
-      margin: 7px 0;
+      display: block;
+      margin: 0;
+      padding: 7px 20px;
 
       .title {
         display: inline-block;
@@ -40,6 +56,14 @@ header {
 
       .description {
         display: inline-block;
+      }
+
+      &:nth-child(even) {
+        background-color: #eee;
+      }
+
+      &:hover {
+        background-color: #e0e0e0;
       }
     }
   }
