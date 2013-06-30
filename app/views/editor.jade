@@ -9,17 +9,20 @@ form.documentForm
       textarea#description(name="description", ng-model="doc.description")
   .editors
     .editorWrap
-      label(for="htmlEditor") HTML:
+      //-label(for="htmlEditor") HTML:
       //-textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
       div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
+      span.label HTML
     .editorWrap
-      label(for="cssEditor") CSS:
+      //-label(for="cssEditor") CSS:
       //-textarea#cssEditor(name="cssEditor", ng-model="doc.cssCode")
       div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
+      span.label CSS
     .editorWrap
-      label(for="jsEditor") JS:
+      //-label(for="jsEditor") JS:
       //-textarea#jsEditor(name="jsEditor", ng-model="doc.jsCode")
       div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
+      span.label JS
 
 .editorControls
   button(ng-click='preview()') Preview

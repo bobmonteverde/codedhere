@@ -81,6 +81,16 @@ header {
     float: left;
   }
 
+  .editorWrap {
+    position: relative;
+
+    .label {
+      position: absolute;
+      top: 8px;
+      right: 20px;
+    }
+  }
+
 
   .ace_editor {
     top: 0;
