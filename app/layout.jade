@@ -20,7 +20,7 @@ html.no-js
       link(rel='stylesheet', href='/styles/main.css')
       // endbuild
 
-  body(ng-app='codedhereApp')
+  body(ng-app='codedhereApp', ng-controller='MainCtrl')
 
     block legacyIE
       //if lt IE 7
@@ -44,8 +44,9 @@ html.no-js
       script(src='/bower_components/angular-cookies/angular-cookies.js')
       script(src='/bower_components/angular-sanitize/angular-sanitize.js')
       script(src='https://cdn.firebase.com/v0/firebase.js')
-      script(src='/bower_components/angular-fire/angularFire.js')
-      //script(src='//cdnjs.cloudflare.com/ajax/libs/angularFire/0.1.0/angularfire.min.js')
+      script(src='https://cdn.firebase.com/v0/firebase-auth-client.js')
+      //-script(src='//cdnjs.cloudflare.com/ajax/libs/angularFire/0.1.0/angularfire.min.js')
+      script(src='/scripts/lib/angularFire.js')
       // build:js scripts/scripts.js
       script(src='/scripts/app.js')
       script(src='/scripts/controllers/main.js')

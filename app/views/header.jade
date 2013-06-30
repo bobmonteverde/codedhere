@@ -2,10 +2,19 @@
   .navbar-inner
     .container
       a.brand(href="/") codedHere.com
-      ul.nav
+      ul#doc-nav.nav
         li.documentList
           a(href="/documentList") Document List
         li.newDocument
           a(href="/document/new") New Document
         li.chat
           a(href="/chat") Chat
+        //TODO: figure out why this doesnt work here
+      ul#user-nav.nav
+        li.user(ng-show="user")
+          a(href="#") {{user.name}}
+        li.logout(ng-show="user")
+          a(ng-click="logout()") Logout
+        li.login(ng-hide="user")
+          a(ng-click="login()") Login
+

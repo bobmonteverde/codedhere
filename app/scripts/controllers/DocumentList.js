@@ -6,20 +6,19 @@ angular.module('codedhereApp')
       var docsUrl = 'https://codedhere.firebaseio.com/documents';
 
       $scope.documents = angularFireCollection(docsUrl);
-console.log($scope.documents);
 
-    /*
-    // Use when backend is up and running
-    $http({
-      method: 'GET',
-      url: '/api/documentList'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.documents = data;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.title = 'Error!'
-    });
-   */
+      /*
+      // Use when backend is up and running
+      $http({
+        method: 'GET',
+        url: '/api/documentList'
+      }).
+      success(function (data, status, headers, config) {
+        $scope.documents = data;
+      }).
+      error(function (data, status, headers, config) {
+        $scope.title = 'Error!'
+      });
+     */
 
   }]);

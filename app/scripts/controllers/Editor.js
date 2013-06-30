@@ -4,11 +4,11 @@ angular.module('codedhereApp')
   .controller('EditorCtrl', ['$scope', '$routeParams', '$location', '$timeout', 'angularFire', 'Firebase',
     function ($scope, $routeParams, $location, $timeout, angularFire, Firebase) {
       var id = $routeParams.id,
-          docUrl = 'https://codedhere.firebaseio.com/documents';
+          url = 'https://codedhere.firebaseio.com/',
+          docUrl = url + 'documents';
 
       //console.log('documents:', documentlist);
       //console.log('location path:', $location.path());
-
 
       if (id === 'new') {
          id = new Firebase(docUrl).push().name();
@@ -29,6 +29,8 @@ angular.module('codedhereApp')
 
 
       $scope.preview = preview;
+
+
 
 
       function preview() {
