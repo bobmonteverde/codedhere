@@ -9,10 +9,14 @@ angular.module('codedhereApp')
 
       //setTimeout(function() { console.log($scope.user, $scope.user && $scope.user.id); }, 5000);
 
-      $scope.login = login;
+      $scope.loginFacebook = loginFacebook;
+      $scope.loginGithub = loginGithub;
+      $scope.loginTwitter = loginTwitter;
       $scope.logout = logout;
 
-      function login() { angularFireAuth.login('twitter'); }
+      function loginFacebook() { angularFireAuth.login('facebook'); }
+      function loginGithub() { angularFireAuth.login('github'); }
+      function loginTwitter() { angularFireAuth.login('twitter'); }
       function logout() { angularFireAuth.logout(); }
 
     }

@@ -5,7 +5,7 @@
       ul#doc-nav.nav
         li.documentList
           a(href="/documentList")
-            i.icon
+            i.icon-list
             | Document List
         li.newDocument
           a(href="/document/new")
@@ -24,6 +24,14 @@
             li.logout
               a(ng-click="logout()") Logout
       ul#user-nav.nav(ng-hide="user")
-        li.login
-          a(ng-click="login()") Login
+        li.login.dropdown
+          a.dropdown-toggle(href="#")
+            | Login
+          ul.dropdown-menu
+            li.loginTwitter
+              a(ng-click="loginFacebook()") Facebook
+            li.loginGithub
+              a(ng-click="loginGithub()") Github
+            li.loginTwitter
+              a(ng-click="loginTwitter()") Twitter
 

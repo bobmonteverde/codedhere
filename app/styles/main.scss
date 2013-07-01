@@ -2,6 +2,54 @@
 @import "compass_twitter_bootstrap";
 @import "font-awesome";
 @import "../bower_components/angular-ui/build/angular-ui.css";
+@import "susy";
+
+$container: 100%;
+$columns: 6;
+$gutters: 1/4;
+$gutter-placement: inside;
+
+
+@include set-grid($container $columns $gutters $gutter-placement);
+
+
+/*
+.wrap {
+  @include span(6);
+  overflow: hidden;
+}
+*/
+
+.documentForm {
+  @include span(6);
+  overflow: hidden;
+}
+
+.settings {
+  @include span(5);
+  margin-left: -100%;
+  .show-left & {
+    margin-left: 0;
+  }
+}
+
+.editors {
+  @include span(6);
+  margin-right: 0;
+  .show-left & {
+    margin-right: -(100% * 4/5);
+  }
+}
+
+
+.ace_editor_wrapper {
+  @include span(6);
+}
+
+#preview {
+  @include span(6);
+}
+
 
 
 i.icon {
@@ -22,7 +70,7 @@ header {
     }
 
     .documentList .icon {
-      @extend .icon-list;
+      //@extend .icon-list;
     }
     .newDocument .icon {
       @extend .icon-file-alt;
@@ -157,6 +205,7 @@ header {
   }
 
   .editorWrap {
+    @include clearfix();
     position: relative;
 
     .label {
@@ -168,6 +217,10 @@ header {
     }
   }
 
+  .previewWrap {
+    @include clearfix();
+    position: relative;
+  }
 
   .ace_editor {
     top: 0;
@@ -179,7 +232,10 @@ header {
   .ace_editor_wrapper {
     position: relative;
     height: 200px;
-    width: 600px;
+  }
+
+  #preview {
+    height: 200px;
   }
 
   .editorControls {
@@ -192,10 +248,6 @@ header {
     }
   }
 
-  #preview {
-    height: 200px;
-    width: 600px;
-  }
 }
 
 

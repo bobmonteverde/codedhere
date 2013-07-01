@@ -72,7 +72,7 @@ module.exports = function (grunt) {
           middleware: function (connect) {
             return [
               modRewrite([
-                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif$ /index.html'
+                '!\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.otf|\\.woff|\\.svg|\\.ttf|\\.gif$ /index.html'
               ]),
               lrSnippet,
               mountFolder(connect, '.tmp'),
@@ -190,7 +190,8 @@ module.exports = function (grunt) {
         relativeAssets: false,
         generatedImagesDir: '.tmp/images/generated',
         httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated'
+        httpGeneratedImagesPath: '/images/generated',
+        require: 'susy'
       },
       dist: {},
       server: {
