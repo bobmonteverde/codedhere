@@ -1,33 +1,71 @@
 
-form.documentForm
-  .settings
-    .inputWrap
-      label(for="title") Title:
-      input#title(name="title", ng-model="doc.title")
-    .inputWrap
-      label(for="description") Description:
-      textarea#description(name="description", ng-model="doc.description")
-  .editors
-    .editorWrap
-      //-label(for="htmlEditor") HTML:
-      //-textarea#htmlEditor(name="htmlEditor", ng-model="doc.htmlCode")
-      div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
-      span.label HTML
-    .editorWrap
-      //-label(for="cssEditor") CSS:
-      //-textarea#cssEditor(name="cssEditor", ng-model="doc.cssCode")
-      div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
-      span.label CSS
-    .editorWrap
-      //-label(for="jsEditor") JS:
-      //-textarea#jsEditor(name="jsEditor", ng-model="doc.jsCode")
-      div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
-      span.label JS
+.documentEditor(ng-controller="EditorCtrl")
+  form.documentForm
+    .settings
+      fieldset
+        legend Document Information
+        .inputWrap
+          label(for="title") Title:
+          input#title(name="title", ng-model="doc.title")
+        .inputWrap
+          label(for="description") Description:
+          textarea#description(name="description", ng-model="doc.description")
+      fieldset
+        legend Document Permissions
+        .inputWrap
+          label(for="permissions-public") Public Permissions:
+          label
+            input(type="radio", name="permissions-public", ng-model="doc.permissions.public", value="rw")
+            | Read+Write
+          label
+            input(type="radio", name="permissions-public", ng-model="doc.permissions.public", value="r")
+            | Read Only
+          label
+            input(type="radio", name="permissions-public", ng-model="doc.permissions.public", value="")
+            | Hidden
+        .inputWrap.privatePermissions
+          label(for="permissions-private")
+            | Private Permissions: 
+            button.addUser(ng-click="addUser()") add
+          div.permissions-user(ng-repeat="user in doc.permissions.users")
+            input(type="text", placeholder="User/Group", ng-model="user.name")
+            label
+              input(type="radio", name="{{user.name}}", ng-model="user.permissions", value="rw")
+              | Read+Write
+            label
+              input(type="radio", name="{{user.name}}", ng-model="user.permissions", value="r")
+              | Read Only
+            button.removeUser(ng-click="removeUser(user)") X
 
-.editorControls
-  button(ng-click='preview()') Preview
+      fieldset
+        legend Document Add-Ons
+        .inputWrap.externalResourcesWrap
+          label(for="externalResources")
+            | External Resources:
+            button.addResource(ng-click="addResource()") add
+          div.resource(ng-repeat="resource in doc.resources")
+            input(type="text", placeholder="JS/CSS URI", ng-model="resource.url")
+            button.removeResource(ng-click="removeResource(resource)") X
 
-.previewWrap
-  p Preview:
-  //-iframe(src="/preview/{{doc.id}}")
-  iframe#preview
+
+
+    .editors
+      fieldset
+        legend Document Content
+        .editorWrap
+          div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
+          span.label HTML
+        .editorWrap
+          div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
+          span.label CSS
+        .editorWrap
+          div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
+          span.label JS
+
+  .editorControls
+    button.preview(ng-click='preview()') Preview
+
+  .previewWrap
+    p Preview:
+    //-iframe(src="/preview/{{doc.id}}")
+    iframe#preview

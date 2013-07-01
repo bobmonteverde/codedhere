@@ -8,6 +8,7 @@ i.icon {
   @extend [class^="icon-"];
 }
 
+
 header {
   .brand {
     float: left;
@@ -88,12 +89,68 @@ header {
 }
 
 
-.documentForm {
-  @include clearfix();
+.documentEditor {
+
+  .documentForm {
+    @include clearfix();
+  }
 
   .settings {
-    float: right;
+    //float: right;
   }
+
+
+  .privatePermissions {
+
+    .addUser {
+      @extend .btn;
+      @extend .btn-mini;
+      &:hover {
+        @extend .btn-success;
+      }
+    }
+    .removeUser {
+      @extend .btn;
+      @extend .btn-mini;
+      &:hover {
+        @extend .btn-danger;
+      }
+    }
+
+    .permissions-user {
+      @include clearfix();
+
+      & > input {
+        float: left;
+      }
+      & > label {
+        float: left;
+      }
+    }
+
+  }
+
+
+  .externalResourcesWrap {
+    .resource {
+      @extend .input-append;
+      .removeResource {
+        @extend .btn;
+        &:hover {
+          @extend .btn-danger;
+        }
+      }
+    }
+
+    .addResource {
+      @extend .btn;
+      @extend .btn-mini;
+      &:hover {
+        @extend .btn-success;
+      }
+    }
+  }
+
 
   .editors {
     float: left;
@@ -121,6 +178,21 @@ header {
 
   .ace_editor_wrapper {
     position: relative;
+    height: 200px;
+    width: 600px;
+  }
+
+  .editorControls {
+    .preview {
+      @extend .btn;
+
+      &:hover {
+        @extend .btn-primary;
+      }
+    }
+  }
+
+  #preview {
     height: 200px;
     width: 600px;
   }
