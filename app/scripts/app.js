@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('codedhereApp', ['firebase', 'ui.ace'])
+angular.module('codedhereApp', ['firebase', 'ui.bootstrap', 'ui.ace'])
   .config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
 

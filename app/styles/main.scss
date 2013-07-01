@@ -1,7 +1,12 @@
 @import "compass/css3";
 @import "compass_twitter_bootstrap";
+@import "font-awesome";
+@import "../bower_components/angular-ui/build/angular-ui.css";
 
 
+i.icon {
+  @extend [class^="icon-"];
+}
 
 header {
   .brand {
@@ -14,10 +19,24 @@ header {
     li {
       float: left;
     }
+
+    .documentList .icon {
+      @extend .icon-list;
+    }
+    .newDocument .icon {
+      @extend .icon-file-alt;
+    }
+    .chat .icon {
+      @extend .icon-user;
+    }
   }
 
   #user-nav {
     float: right;
+
+    .user i.icon {
+      @extend .icon-caret-down;
+    }
   }
 }
 
@@ -25,7 +44,7 @@ header {
 .documentList {
 
   .docSearch {
-    @extend .clearfix;
+    @include clearfix();
     @extend .form-search;
 
     div {
@@ -41,7 +60,6 @@ header {
   }
 
   ul {
-    list-style-type: none;
     margin-left: 0;
 
     li {
@@ -71,7 +89,7 @@ header {
 
 
 .documentForm {
-  @extend .clearfix;
+  @include clearfix();
 
   .settings {
     float: right;
@@ -85,6 +103,8 @@ header {
     position: relative;
 
     .label {
+      @include opacity(.6);
+
       position: absolute;
       top: 8px;
       right: 20px;
@@ -110,7 +130,7 @@ header {
 
 #chatWrap {
   .nameWrap {
-    @extend .clearfix;
+    @include clearfix();
 
     label {
       float: left;

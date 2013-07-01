@@ -4,16 +4,26 @@
       a.brand(href="/") codedHere.com
       ul#doc-nav.nav
         li.documentList
-          a(href="/documentList") Document List
+          a(href="/documentList")
+            i.icon
+            | Document List
         li.newDocument
-          a(href="/document/new") New Document
+          a(href="/document/new")
+            i.icon
+            | New Document
         li.chat
-          a(href="/chat") Chat
-      ul#user-nav.nav
-        li.user(ng-show="user")
-          a(href="#") {{user.name}}
-        li.logout(ng-show="user")
-          a(ng-click="logout()") Logout
-        li.login(ng-hide="user")
+          a(href="/chat")
+            i.icon
+            | Chat
+      ul#user-nav.nav(ng-show="user")
+        li.user.dropdown
+          a.dropdown-toggle(href="#")
+            | {{user.name}}
+            i.icon
+          ul.dropdown-menu
+            li.logout
+              a(ng-click="logout()") Logout
+      ul#user-nav.nav(ng-hide="user")
+        li.login
           a(ng-click="login()") Login
 

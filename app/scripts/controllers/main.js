@@ -7,7 +7,7 @@ angular.module('codedhereApp')
 
       angularFireAuth.initialize(url, {scope: $scope, name: "user"});
 
-      setTimeout(function() { console.log($scope.user, $scope.user.id); }, 5000);
+      //setTimeout(function() { console.log($scope.user, $scope.user && $scope.user.id); }, 5000);
 
       $scope.login = login;
       $scope.logout = logout;
