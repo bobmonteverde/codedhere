@@ -13,6 +13,10 @@ angular.module('codedhereApp')
       $scope.loginGithub = loginGithub;
       $scope.loginTwitter = loginTwitter;
       $scope.logout = logout;
+      $scope.viewClass = true;
+      $scope.toggleView = toggleView;
+
+      function toggleView() { $scope.viewClass = !$scope.viewClass; }
 
       function loginFacebook() { angularFireAuth.login('facebook'); }
       function loginGithub() { angularFireAuth.login('github'); }

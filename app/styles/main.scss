@@ -28,7 +28,7 @@ $gutter-placement: inside;
 .settings {
   @include span(5);
   margin-left: -100%;
-  .show-left & {
+  .showSettings & {
     margin-left: 0;
   }
 }
@@ -36,7 +36,7 @@ $gutter-placement: inside;
 .editors {
   @include span(6);
   margin-right: 0;
-  .show-left & {
+  .showSettings & {
     margin-right: -(100% * 4/5);
   }
 }
@@ -60,6 +60,18 @@ i.icon {
 header {
   .brand {
     float: left;
+  }
+
+  #settings-nav {
+    float: left;
+
+    li {
+      float: left;
+    }
+
+    .settingsLink .icon {
+      @extend .icon-cogs;
+    }
   }
 
   #doc-nav {
