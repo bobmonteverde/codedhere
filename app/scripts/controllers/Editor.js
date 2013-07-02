@@ -20,12 +20,6 @@ angular.module('codedhereApp')
 
       var promise = angularFire(docUrl + '/' + id, $scope, 'doc', {});
 
-
-      //$scope.$on('$viewContentLoaded', function() { $timeout(preview); });
-
-
-
-
       promise.then(function() {
         $timeout(preview);
 

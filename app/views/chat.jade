@@ -3,16 +3,16 @@
     a(href="#", ng-click="toggleChat()")
       i.icon
       |  Chat
-  fieldset
-    legend Document Chat
-    .nameWrap
-      label(for="name") Your name:
-      input#name.input-medium(name="name", type="text", ng-model="username")
-    .messagesWrap(auto-scroll="messages")
-      .message(ng-cloak, ng-repeat="message in messages")
-        em {{message.from}}:
-        {{message.content}}
-    form.addMessage(ng-submit="addMessage()")
+  form.addMessage(ng-submit="addMessage()")
+    fieldset
+      legend Document Chat
+      .nameWrap
+        label(for="name") Your name:
+        input#name.input-medium(name="name", type="text", ng-model="username")
+      .messagesWrap(auto-scroll="messages")
+        .message(ng-cloak, ng-repeat="message in messages")
+          em {{message.from}}:
+          | {{message.content}}
       .input-append
-        input#message(type="text", ng-model="message", placeholder="Message...")
-        input.btn#send(type="submit", value="Send")
+        input#message.input-large(type="text", ng-model="message", placeholder="Message...")
+        input#send.btn(type="submit", value="Send")

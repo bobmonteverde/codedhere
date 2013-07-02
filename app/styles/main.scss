@@ -6,7 +6,7 @@
 
 $container: 100%;
 $columns: 6;
-$gutters: 1/4;
+$gutters: 1/8;
 $gutter-placement: inside;
 
 
@@ -21,43 +21,40 @@ $gutter-placement: inside;
 */
 
 .documentEditor {
-  @include span(6);
+  @include span(6 of 6);
   overflow: hidden;
 }
 
-.documentForm {
-  @include span(16);
+.documentWrap {
+  //@include span(11);
+  //@include span(6 of 6);
   @include transition-property(margin);
   @include transition-duration(1s);
 
-  margin-left: -(100% * 5/6);
+  //margin-left: -(100% * 5/6);
   .showSettings & {
     margin-left: 0;
-  }
-  .showChat & {
-    margin-left: -(100% * 11/6);
   }
 }
 
 .settings {
-  @include span(5 of 16);
+  display: none !important;
+  @include span(5 of 11);
 }
 
 .editors {
-  @include span(6 of 16);
+  //@include span(6 of 11);
+  //@include span(6 of 6);
 }
 
-.docChat {
-  @include span(5 of 16);
-}
 
 
 .ace_editor_wrapper {
-  @include span(6);
+  //@include span(6);
 }
 
 #preview {
-  @include span(6);
+  @include span(6 of 6);
 }
 
 
@@ -73,20 +70,11 @@ i.icon {
 
 
 header {
-  .brand {
-    float: left;
-  }
+  height: 42px;
+  margin-bottom: 3px;
 
-  #settings-nav {
-    float: left;
-
-    li {
-      float: left;
-    }
-
-    .settingsLink .icon {
-      @extend .icon-cogs;
-    }
+  .icon {
+    margin-right: 4px;
   }
 
   #doc-nav {
@@ -96,8 +84,12 @@ header {
       float: left;
     }
 
+    .documents > a > .icon {
+      @extend .icon-file-text;
+    }
+
     .documentList .icon {
-      //@extend .icon-list;
+      @extend .icon-list;
     }
     .newDocument .icon {
       @extend .icon-file-alt;
@@ -110,8 +102,44 @@ header {
   #user-nav {
     float: right;
 
-    .user i.icon {
-      @extend .icon-caret-down;
+    .userName {
+      display: inline-block;
+      max-width: 110px;
+      max-height: 20px;
+      overflow: hidden;
+    }
+
+    & > li > a {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .login > a > i.icon {
+      @extend .icon-signin;
+    }
+
+    .logout i.icon {
+      @extend .icon-signout;
+    }
+
+    .user > a > i.icon {
+      @extend .icon-user;
+    }
+
+    .twitter i.icon {
+      @extend .icon-twitter;
+    }
+
+    .github i.icon {
+      @extend .icon-github;
+    }
+
+    .facebook i.icon {
+      @extend .icon-facebook;
+    }
+
+    &.login-nav {
+      margin-right: 60px;
     }
   }
 }
@@ -166,7 +194,7 @@ header {
 
 .documentEditor {
 
-  .documentForm {
+  .documentWrap {
     @include clearfix();
   }
 
@@ -180,13 +208,14 @@ header {
       top: 0;
 
       a {
-        font-size: 2em;
+        font-size: 1.5em;
 
         &:hover {
           text-decoration: none;
         }
 
         .icon {
+          font-size: 1.5em;
           @extend .icon-cogs;
         }
       }
@@ -247,25 +276,37 @@ header {
 
 
   .editors {
-    float: left;
-  }
+    //float: left;
+    form#editorsForm {
+      margin: 0;
+    }
 
-  .editorWrap {
-    @include clearfix();
-    position: relative;
-
-    .label {
-      @include opacity(.6);
-
-      position: absolute;
-      top: 8px;
-      right: 20px;
+    legend {
+      display: none;
     }
   }
+
 
   .previewWrap {
     @include clearfix();
     position: relative;
+
+    #preview {
+      height: 200px;
+      padding: 0;
+      border: 1px solid #ccc;
+    }
+
+    .editorControls {
+      .preview {
+        @extend .btn;
+        @extend .btn-success;
+
+        position: absolute;
+        top: 4px;
+        right: 20px;
+      }
+    }
   }
 
   .ace_editor {
@@ -280,19 +321,6 @@ header {
     height: 200px;
   }
 
-  #preview {
-    height: 200px;
-  }
-
-  .editorControls {
-    .preview {
-      @extend .btn;
-
-      &:hover {
-        @extend .btn-primary;
-      }
-    }
-  }
 
 }
 
@@ -303,11 +331,11 @@ header {
 
   .chatLink {
     position: absolute;
-    left: 0;
+    left: -24px;
     top: 0;
 
     a {
-      font-size: 2em;
+      font-size: 1.5em;
 
       &:hover {
         text-decoration: none;
@@ -315,6 +343,7 @@ header {
 
       .icon {
         @extend .icon-comment;
+        font-size: 1.5em;
       }
     }
   }
@@ -342,7 +371,6 @@ header {
   }
 
   .messagesWrap {
-    @extend .span8;
     height: 280px;
     border: 1px solid #ccc;
     padding: 10px;
@@ -351,12 +379,11 @@ header {
   }
 
   .addMessage {
-    @extend .span7;
-    @extend .offset1;
+    @include span(5);
+
     margin-top: 10px;
 
     #message {
-      @extend .span6;
     }
     #send {
     }

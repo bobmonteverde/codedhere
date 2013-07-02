@@ -1,6 +1,6 @@
 
 .documentEditor(ng-controller="EditorCtrl")
-  form.documentForm
+  .documentWrap
     .settings
       .settingsLink
         a(href="#", ng-click="toggleSettings()")
@@ -54,25 +54,26 @@
 
 
     .editors
-      fieldset
-        legend Document Content
-        .editorWrap
-          div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
-          span.label HTML
-        .editorWrap
-          div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
-          span.label CSS
-        .editorWrap
-          div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
-          span.label JS
+      form#editorsForm(name="editorsForm")
+        fieldset
+          legend Document Content
+          accordion(close-others="false")
+            accordion-group.editorWrap(heading="HTML")
+              div(ui-ace="{mode:'html'}", scope-instance="htmlEditor", ng-model="doc.htmlCode")
+              //span.label HTML
+            accordion-group.editorWrap(heading="CSS")
+              div(ui-ace="{mode:'css'}", scope-instance="cssEditor", ng-model="doc.cssCode")
+              //span.label CSS
+            accordion-group.editorWrap(heading="JavaScript")
+              div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
+              //span.label JS
 
+
+    .previewWrap
+      iframe#preview
       .editorControls
-        button.preview(ng-click='preview()') Preview
+        button.preview(ng-click="preview()") Preview
+        //-button.preview(ng-click="preview()", ng-show="editorsForm.$dirty") Preview
 
-      .previewWrap
-        p Preview:
-        //-iframe(src="/preview/{{doc.id}}")
-        iframe#preview
-
-    .docChat(ng-include="'/views/chat.html'")
+    //-.docChat(ng-include="'/views/chat.html'")
 
