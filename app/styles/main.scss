@@ -20,45 +20,35 @@ $gutter-placement: inside;
 }
 */
 
-.documentForm {
+.documentEditor {
   @include span(6);
   overflow: hidden;
 }
 
-.settings {
-  @include span(5);
+.documentForm {
+  @include span(16);
   @include transition-property(margin);
   @include transition-duration(1s);
 
-  margin-left: -100%;
+  margin-left: -(100% * 5/6);
   .showSettings & {
     margin-left: 0;
   }
+  .showChat & {
+    margin-left: -(100% * 11/6);
+  }
+}
+
+.settings {
+  @include span(5 of 16);
 }
 
 .editors {
-  @include span(6);
-  @include transition-property(margin);
-  @include transition-duration(1s);
-
-  margin-right: 0;
-  .showSettings & {
-    margin-right: -(100% * 5/6);
-  }
-  .showChat & {
-    margin-left: -(100% * 5/6);
-  }
+  @include span(6 of 16);
 }
 
 .docChat {
-  @include span(5);
-  @include transition-property(margin);
-  @include transition-duration(1s);
-
-  margin-right: -100%;
-  .showChat & {
-    margin-right: 0;
-  }
+  @include span(5 of 16);
 }
 
 
@@ -113,7 +103,7 @@ header {
       @extend .icon-file-alt;
     }
     .chat .icon {
-      @extend .icon-comment-alt;
+      @extend .icon-comment;
     }
   }
 
@@ -324,7 +314,7 @@ header {
       }
 
       .icon {
-        @extend .icon-comment-alt;
+        @extend .icon-comment;
       }
     }
   }
