@@ -77,6 +77,14 @@ header {
     margin-right: 4px;
   }
 
+  #brand {
+    display: block;
+    position: absolute;
+    float: none;
+    left: 50%;
+    margin-left: -90px;
+  }
+
   #doc-nav {
     float: left;
 
@@ -137,10 +145,6 @@ header {
     .facebook i.icon {
       @extend .icon-facebook;
     }
-
-    &.login-nav {
-      margin-right: 60px;
-    }
   }
 }
 
@@ -153,12 +157,13 @@ header {
 
     div {
       @extend .input-prepend;
-      margin-left: 20px;
+      margin: 10px 20px;
 
       button {
         @extend .btn;
       }
       input {
+        @extend .input-xlarge;
       }
     }
   }

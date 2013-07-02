@@ -1,6 +1,6 @@
 .navbar
   .navbar-inner
-    a.brand(href="/") codedHere.com
+    a#brand.brand(href="/") codedHere.com
     ul#doc-nav.nav
       li.documents.dropdown
         a.dropdown-toggle(href="#")
@@ -22,7 +22,7 @@
           i.icon
           span.userName {{user.name}}
           span.caret
-        ul.dropdown-menu
+        ul.dropdown-menu.pull-right
           li.logout
             a(ng-click="logout()")
               i.icon
@@ -33,7 +33,7 @@
           i.icon
           span Login
           span.caret
-        ul.dropdown-menu
+        ul.dropdown-menu.pull-right
           li.twitter
             a(ng-click="loginFacebook()")
               i.icon
