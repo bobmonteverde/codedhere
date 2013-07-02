@@ -2,6 +2,10 @@
 .documentEditor(ng-controller="EditorCtrl")
   form.documentForm
     .settings
+      .settingsLink
+        a(href="#", ng-click="toggleSettings()")
+          | Settings 
+          i.icon
       fieldset
         legend Document Information
         .inputWrap
@@ -62,10 +66,13 @@
           div(ui-ace="{mode:'javascript'}", scope-instance="jsEditor", ng-model="doc.jsCode")
           span.label JS
 
-  .editorControls
-    button.preview(ng-click='preview()') Preview
+      .editorControls
+        button.preview(ng-click='preview()') Preview
 
-  .previewWrap
-    p Preview:
-    //-iframe(src="/preview/{{doc.id}}")
-    iframe#preview
+      .previewWrap
+        p Preview:
+        //-iframe(src="/preview/{{doc.id}}")
+        iframe#preview
+
+    .docChat(ng-include="'/views/chat.html'")
+

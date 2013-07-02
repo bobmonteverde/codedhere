@@ -3,27 +3,28 @@
     .container
       ul#settings-nav.nav
         li.settingsLink
-          a(href="#", ng-click="toggleView()")
+          a(href="#", ng-click="toggleSettings()")
             i.icon
-            |  Settings
+            span  Settings
       a.brand(href="/") codedHere.com
       ul#doc-nav.nav
         li.documentList
           a(href="/documentList")
             i.icon-list
-            |  Document List
+            span  Document List
         li.newDocument
           a(href="/document/new")
             i.icon
-            |  New Document
+            span  New Document
         li.chat
-          a(href="/chat")
+          //-a(href="/chat")
+          a(href="#", ng-click="toggleChat()")
             i.icon
             |  Chat
       ul#user-nav.nav(ng-show="user")
         li.user.dropdown
           a.dropdown-toggle(href="#")
-            |  {{user.name}}
+            span  {{user.name}}
             span.caret
           ul.dropdown-menu
             li.logout
@@ -31,7 +32,7 @@
       ul#user-nav.nav(ng-hide="user")
         li.login.dropdown
           a.dropdown-toggle(href="#")
-            |  Login
+            span  Login
           ul.dropdown-menu
             li.loginTwitter
               a(ng-click="loginFacebook()") Facebook

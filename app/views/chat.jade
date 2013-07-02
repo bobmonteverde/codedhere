@@ -1,12 +1,18 @@
 #chatWrap(ng-controller="ChatCtrl")
-  .nameWrap
-    label(for="name") Your name:
-    input#name.input-medium(name="name", type="text", ng-model="username")
-  .messagesWrap(auto-scroll="messages")
-    .message(ng-cloak, ng-repeat="message in messages")
-      em {{message.from}}:
-      {{message.content}}
-  form.addMessage(ng-submit="addMessage()")
-    .input-append
-      input#message(type="text", ng-model="message", placeholder="Message...")
-      input.btn#send(type="submit", value="Send")
+  .chatLink
+    a(href="#", ng-click="toggleChat()")
+      i.icon
+      |  Chat
+  fieldset
+    legend Document Chat
+    .nameWrap
+      label(for="name") Your name:
+      input#name.input-medium(name="name", type="text", ng-model="username")
+    .messagesWrap(auto-scroll="messages")
+      .message(ng-cloak, ng-repeat="message in messages")
+        em {{message.from}}:
+        {{message.content}}
+    form.addMessage(ng-submit="addMessage()")
+      .input-append
+        input#message(type="text", ng-model="message", placeholder="Message...")
+        input.btn#send(type="submit", value="Send")

@@ -13,10 +13,20 @@ angular.module('codedhereApp')
       $scope.loginGithub = loginGithub;
       $scope.loginTwitter = loginTwitter;
       $scope.logout = logout;
-      $scope.viewClass = true;
-      $scope.toggleView = toggleView;
 
-      function toggleView() { $scope.viewClass = !$scope.viewClass; }
+      $scope.showSettings = false;
+      $scope.toggleSettings = toggleSettings;
+      $scope.showChat = false;
+      $scope.toggleChat = toggleChat;
+
+      function toggleSettings() { 
+        $scope.showSettings = !$scope.showSettings;
+        if ($scope.showSettings) $scope.showChat = false;
+      }
+      function toggleChat() {
+        $scope.showChat = !$scope.showChat;
+        if ($scope.showChat) $scope.showSettings = false;
+      }
 
       function loginFacebook() { angularFireAuth.login('facebook'); }
       function loginGithub() { angularFireAuth.login('github'); }

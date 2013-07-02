@@ -27,6 +27,9 @@ $gutter-placement: inside;
 
 .settings {
   @include span(5);
+  @include transition-property(margin);
+  @include transition-duration(1s);
+
   margin-left: -100%;
   .showSettings & {
     margin-left: 0;
@@ -35,9 +38,26 @@ $gutter-placement: inside;
 
 .editors {
   @include span(6);
+  @include transition-property(margin);
+  @include transition-duration(1s);
+
   margin-right: 0;
   .showSettings & {
-    margin-right: -(100% * 4/5);
+    margin-right: -(100% * 5/6);
+  }
+  .showChat & {
+    margin-left: -(100% * 5/6);
+  }
+}
+
+.docChat {
+  @include span(5);
+  @include transition-property(margin);
+  @include transition-duration(1s);
+
+  margin-right: -100%;
+  .showChat & {
+    margin-right: 0;
   }
 }
 
@@ -48,6 +68,11 @@ $gutter-placement: inside;
 
 #preview {
   @include span(6);
+}
+
+
+legend {
+  text-align: center;
 }
 
 
@@ -88,7 +113,7 @@ header {
       @extend .icon-file-alt;
     }
     .chat .icon {
-      @extend .icon-user;
+      @extend .icon-comment-alt;
     }
   }
 
@@ -156,7 +181,26 @@ header {
   }
 
   .settings {
-    //float: right;
+    position: relative;
+    overflow: visible;
+
+    .settingsLink {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      a {
+        font-size: 2em;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        .icon {
+          @extend .icon-cogs;
+        }
+      }
+    }
   }
 
 
@@ -265,6 +309,26 @@ header {
 
 
 #chatWrap {
+  position: relative;
+
+  .chatLink {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    a {
+      font-size: 2em;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .icon {
+        @extend .icon-comment-alt;
+      }
+    }
+  }
+
   .nameWrap {
     @include clearfix();
 
